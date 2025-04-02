@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha de CSS - DIO</title>
+  <link rel="icon" href="/assets/images/OIP (3).jpeg">
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="/assets/css/rolagem.css">
+</head>
+<body>
+  <div class="scroll-container"></div>
+  <header class="banner">
+    <div class="banner-content">
+      <div class="logo">
+        <img id="bannergojo" src="/assets/images/PMtwxe9.png" title="Logotipo do curso do Gojo" alt="Logotipo gojo curso">
+      </div>
+      <h1>Curso de Feiticeiro</h1>
+      <p>O novo curso de feiticeiro do GOJO está disponível. Acesse já e aprenda do zero como expandir seu domínio.</p>
+      <button id="subscribe">Quero expandir!</button>
+      <audio id="audio" src="audio (mp3cut.net).mp3" preload="auto"></audio>
+    </div>
+  </header>
+  <main class="bannermain">
+    <section id="course-content">
+      <h2>O que vou aprender?</h2>
+      <p>
+        Temos 3 módulos recheados de conteúdos do básico ao avançado para que você aprenda a 
+        a fazer sua Expansão de Dominio utilizando o minimo de energia amaldiçoada.
+      </p>
+      <div class="modules-list">
+        <div class="module">
+          <span class="modules">Módulo 01: </span> <span> Dominando o jujutsu e corpo</span> 
+        </div>
+        <div class="module">
+          <span class="modules">Módulo 02: </span><span> Aprendendo o dominio simples </span> 
+        </div>
+        <div class="module">
+          <span class="modules">Módulo 03: </span><span> Expansão de dominio incompleta</span> 
+        </div>
+        <div class="module">
+          <span class="modules">Módulo 04: </span><span> Expansão de  dominio finalizada</span> 
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="tenkai">
+      <div id="jujutsukaisen"><p>APRENDA O VERDADEIRO JUJUTSU COM A GENTE</p></div>
+      S</div>
+    </section>
+    <section id="professional-challenges">
+     <div id="socorro"><h2>Evolua e faça seu dominio como um profissional!</h2></div>
+      <img id="fim" src="/assets/images/R (1).png" title="Satoru voando" alt="Gojo voando">
+     <img id="comeco" src="assets/images/comeco.png" title="Satoru pensante" alt="Satoro Gojo pensando">
+      <p>
+        Junte-se ao nosso ecossistema e transforme o mundo com a gente! Todos os dias dezenas de feiticeiros 
+        acessam a nossa plataforma em busca dos talentos mais promissores, fortes e criativos, 
+        além do conhecimento técnico. 
+        A nossa missão é te preparar para que você conecte-se com as melhores oportunidades.
+      </p>
+    </section>
+  </main>
+  <footer>
+      <div id="footer">
+          <img class="gojo-logo" src="assets/images/Gojo-PNG-180x180.png" title="Logotipo DIO com o texto make the change" alt="Logotipo GOJO">
+          <p>Acesse <a href="https://satorogojo.com">Satoruuu</a> e se cadastre agora</p>
+      </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const subscribeBtn = document.getElementById('subscribe');
+  const audio = document.getElementById('audio');
+  const bannerGojo = document.getElementById('bannergojo');
+  
+  // Pré-carrega a imagem substituta
+  const replacementImage = new Image();
+  replacementImage.src = '/assets/images/replaceimage.jpg';
+  
+  // Controle de estado
+  let isOriginalImage = true;
+  const originalImageSrc = '/assets/images/PMtwxe9.png';
+  const replacementImageSrc = '/assets/images/replaceimage.png';
+  
+  // Remove o preload do áudio para evitar bloqueios
+  audio.removeAttribute('preload');
+  
+  // Ação do botão
+  subscribeBtn.addEventListener('click', function() {
+    // Primeiro interrompe qualquer reprodução existente
+    audio.pause();
+    audio.currentTime = 0;
+    
+    // Configura o volume
+    audio.volume = 0.7;
+    
+    // Tenta reproduzir o áudio
+    const playPromise = audio.play();
+    
+    // Trata possíveis erros de reprodução
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        // Se houver erro, mostra no console
+        console.log("Erro ao reproduzir áudio:", error);
+        // Tenta destravar o áudio
+        document.body.addEventListener('click', function unlock() {
+          audio.play().then(() => {
+            document.body.removeEventListener('click', unlock);
+          });
+        }, { once: true });
+      });
+    }
+    
+    // Efeito no botão
+    this.classList.add('clicked');
+    setTimeout(() => this.classList.remove('clicked'), 200);
+    
+    // Efeito de transição na imagem
+    bannerGojo.style.opacity = 0;
+    
+    setTimeout(() => {
+      bannerGojo.src = isOriginalImage ? replacementImageSrc : originalImageSrc;
+      bannerGojo.alt = isOriginalImage ? "Logotipo colorido" : "Logotipo gojo curso";
+      bannerGojo.style.opacity = 1;
+      isOriginalImage = !isOriginalImage;
+    }, 500);
+  });
+});
+  </script>
+</body>
+</html>
