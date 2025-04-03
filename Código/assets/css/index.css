@@ -273,9 +273,9 @@ footer a {
   
     #fim {
         position: absolute;
-        top: 40%;          /* Alinha o topo da imagem ao centro vertical */
-        left: 50%;         /* Alinha a esquerda da imagem ao centro horizontal */
-        transform: translate(-50%, -50%); /* Ajusta o centro da imagem */
-        height: 400px;     /* Mantém a altura definida */
-        z-index: 2;        /* Garante que fique acima de outros elementos */
+        top: 40%;         
+        left: 50%;         
+        transform: translate(-50%, -50%); 
+        height: 400px;     
+        z-index: 2;        
     }
