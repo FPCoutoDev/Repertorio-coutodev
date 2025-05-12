@@ -1,0 +1,42 @@
+
+#course-content  {
+animation: moveGradient 10s ease-in-out infinite;
+}
+
+@keyframes moveGradient {
+  0%   { background-position: center 0%; }
+  50%  { background-position: center 100%; }
+  100% { background-position: center 0%; }
+}
+
+.module {
+  animation: floatUpDown 4s ease-in-out infinite;
+ transition: 0.5s;
+}
+
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.module:hover {
+    background-color: #21293d;
+    animation-play-state: paused;
+}
+
+.reveal {
+opacity: 0;
+transform: translateY(200px);
+transition: 1.5s;
+}
+
+.x {
+    transform: translateX(400px);
+}
+
+.reveal.visible {
+  opacity: 1; 
+  transform: translateY(0px);
+  transform: translateX(0px);
+}

@@ -11,11 +11,13 @@ body, html {
     margin: 0;          /* Remove margens */
     padding: 0;         /* Remove paddings */
   }
-  
+  a {
+    text-decoration: none;
+  }
+
 .banner{
-    padding-top: 10px;
     width: 100%;
-    height: 600px;
+    height: 50%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -25,48 +27,42 @@ body, html {
     background-attachment: fixed;
     margin-top: 0;
     position: relative;
-
-    
 }
+
 .banner-content {
     backdrop-filter: blur(5px) brightness(0.8);
     width: 100vw;
+    padding: 30px 0;
     height: 100%;
 }
 
 .logo {
-    width: 300px;
+    width: 25%;
     height: auto; 
     margin: 0 auto;
-    padding: 0 10px; /* Controle melhor o padding */
     box-sizing: border-box;
-    
-
-
 }
+
 #bannergojo {
-    object-fit: contain;
     max-width: 100%;
     height: auto;
     display: block;
-    transition: opacity 0.3s ease-in-out;
-    user-select: none;
-    -webkit-user-drag: none;
+    transition: opacity 0.5s ease-in-out;
     pointer-events: none;
-
 }
 
 #subscribe.clicked {
     transform: scale(0.95);
   }
+
 header h1 {
     font-family: 'boldonse';
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 50px;
-    margin: 0;
-    letter-spacing: 3px;
-    word-spacing: 6px;
+    font-size: 3.125em;
+    margin: 0.4em;
+    letter-spacing: .1875em;
+    word-spacing: .34em;
     color: rgb(154, 196, 232);
 }
 header p {
@@ -77,24 +73,25 @@ header p {
     margin: 0 auto;
     padding: 10px 0; 
 }
-button {
-    all: unset; /* Remove TODOS os estilos (melhor opção moderna) */
-    cursor: pointer; /* Mantém o cursor de clique */
+#subscribe {
+    all: unset;
+    cursor: pointer;
     border: 6px solid royalblue; 
     width: 350px;
     height: 80px;
+    background-color: transparent;
+    transition: background-color 0.3s, transform 0.2s;
     font-family: 'boldonse';
     font-weight: bold;
     color: royalblue;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background-color: transparent;
-    transition: background-color 0.3s, transform 0.2s;
 }
-button:hover {
+
+#subscribe:hover {
     transform: scale(1.05);
 }
-button:active {
+#subscribe:active {
     transform: scale(0.98);
     box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
   }
@@ -105,40 +102,46 @@ button:active {
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: black;
+    background-color: #0a0a0a;
     background-position: center;
     margin-top: 0;
 }
 main{
     margin: 0;
-    border-bottom: 2px solid rgb(0, 170, 255);
-    border-top: 2px solid rgb(0, 170, 255);
+    border-bottom: 2px solid rgb(188, 185, 185);
+    border-top: 2px solid rgb(188, 185, 185);
 }
 #course-content h2 {
     margin: 0;
-    color: white;
+    color: #9AC4E8;
     padding-top: 90px;
     text-transform: uppercase;
-    word-spacing: 8px;
-    font-size: 35px;
+    word-spacing: 6px;
+    font-size: 3em;
+    font-weight: 800;
     letter-spacing: 08px;
 }
 #course-content {
     text-align: center;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(#44536E,#05070b);
+    background-size: 100% 200%;
 }
 #course-content p{
     font-size: 16px;
-    color: aliceblue;
+    color: #c0d7ec;
     letter-spacing: 1px;
     width: 1000px;
     margin: 0 auto;
     padding-top: 30px;
     margin-bottom: 20px;
 }
-.modules-list div {
-    margin: 20px auto;
+.modules-list  {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas do mesmo tamanho */
+    gap: 10px;
+    place-items: center;
     }
 
 .module {
@@ -146,20 +149,19 @@ main{
     justify-content: center;
     color: white;
     display: flex;
-    width: 500px;
-    height: 60px;
-    border: 3px solid royalblue;
-    border-radius: 50px;
+    width: 25em;
+    height: 11em;
+    border: 2px solid rgb(212, 213, 217);
+    border-radius: 20px;
     text-align: center;
-    background-color: rgb(35, 35, 35);
-    box-shadow: inset 4px 3px 20px rgb(0, 0, 0);
+    background-color: #121621;
 }
 .module span{ 
     padding-top: 20px;
     font-size: 18px;
 }
 .module .modules {
-    color: rgb(0, 157, 255);
+    color: rgb(85, 146, 197);
     letter-spacing: 2px;
     word-spacing: 3px;
     margin-right: 2px;
@@ -174,7 +176,6 @@ main{
     background-position: center;
     margin-top: 0;
     position: relative;
-    margin-top: 2px solid rgb(22, 60, 229);
 }
 #jujutsukaisen {
     color: rgb(0, 0, 0);
@@ -188,26 +189,17 @@ main{
     text-transform: lowercase;
     margin-left: 550px;
     margin-top: 60px;
-    text-shadow: 3px 2px 0 rgb(181, 181, 181);
+    text-shadow: 3px 2px 0 #DCDCDC;
 }
 #professional-challenges {
     width: 100%;
     height: 700px;
-    background-color: black;
+    background-image: linear-gradient(rgb(21, 21, 21), royalblue, rgb(15, 15, 76));
     position: relative; /* Para posicionar a imagem corretamente */
     text-align: center; /* Centraliza o h2 e o p */
     -webkit-user-drag: none;
     pointer-events: none;
-}
-
-#professional-challenges h2 {
-    color: rgb(57, 169, 255);
-    text-transform: uppercase;
-    word-spacing: 8px;
-    font-size: 35px;
-    letter-spacing: 8px;
-    margin-top: 50px; /* Ajusta a posição */
-    padding: 20px;
+    background-size: 100% 200%;
 }
 
 #professional-challenges p {
@@ -232,19 +224,19 @@ main{
 }
 
 section {
-    border-bottom: 2px solid rgb(0, 170, 255);
-    border-top: 2px solid rgb(0, 170, 255);
+    border-bottom: 2px solid rgb(239, 239, 239);
+    border-top: 2px solid rgb(227, 227, 227);
 }
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ocupa no mínimo 100% da altura da tela */
+    min-height: 100vh;
     margin: 0;
   }
   
-  /* === Main deve crescer para empurrar o footer para baixo === */
+ 
   .bannermain {
-    flex: 1; /* Faz o main ocupar todo o espaço disponível */
+    flex: 1; 
     width: 100%;
     background-color: black;
   }
@@ -257,7 +249,6 @@ body {
     color: white;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgb(8, 181, 255);
     padding-top: 0;
     margin-top: 0; /* Removendo o deslocamento negativo */
 }
@@ -270,7 +261,16 @@ footer a {
     margin: 0 auto;
     display: block;
   }
-  
+  .gojo-logo {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;         /* evita espaço extra embaixo da imagem */
+    margin: 0 auto;         /* centraliza se quiser garantir */
+    width: 100px;           /* garante o tamanho que você quer */
+    height: 100px;
+    
+  }
     #fim {
         position: absolute;
         top: 40%;         
@@ -278,4 +278,19 @@ footer a {
         transform: translate(-50%, -50%); 
         height: 400px;     
         z-index: 2;        
+    }
+   
+    #socorro h2{
+        background-image: url('https://cdnb.artstation.com/p/assets/images/images/069/755/579/large/therizzler-ninjuras-screenshot-2023-10-24-215149.jpg?1700923309');
+        background-size: cover;
+        background-position: right;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 4em;
+        font-weight: 800;
+        text-transform: uppercase;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+        margin-top: 50px; /* Ajusta a posição */
+        padding: 20px;
     }
