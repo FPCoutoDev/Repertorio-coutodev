@@ -64,7 +64,15 @@ header h1 {
     letter-spacing: .1875em;
     word-spacing: .34em;
     color: rgb(154, 196, 232);
+    transition: 0.4s;
+    display: inline-block;
 }
+header h1:hover{
+    text-shadow:
+      0 0 2px #ffffff,
+      0 0 20px #a6c8ff,  /* azul claro que aparece no brilho externo */  /* mais espalhado, tom etéreo */
+      0 0 25px #4060a0;  /* tom azulado profundo pra dar dimensão */
+  }
 header p {
     font-size: 25px;
     color: aliceblue;
@@ -96,16 +104,6 @@ header p {
     box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
   }
 
-  .bannermain { 
-    width: 100%;
-    height: 640px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background-color: #0a0a0a;
-    background-position: center;
-    margin-top: 0;
-}
 main{
     margin: 0;
     border-bottom: 2px solid rgb(188, 185, 185);
@@ -144,28 +142,6 @@ main{
     place-items: center;
     }
 
-.module {
-    margin: 20px;
-    justify-content: center;
-    color: white;
-    display: flex;
-    width: 25em;
-    height: 11em;
-    border: 2px solid rgb(212, 213, 217);
-    border-radius: 20px;
-    text-align: center;
-    background-color: #121621;
-}
-.module span{ 
-    padding-top: 20px;
-    font-size: 18px;
-}
-.module .modules {
-    color: rgb(85, 146, 197);
-    letter-spacing: 2px;
-    word-spacing: 3px;
-    margin-right: 2px;
-}
 .tenkai {
     width: 100%;
     height: 500px;
@@ -191,54 +167,19 @@ main{
     margin-top: 60px;
     text-shadow: 3px 2px 0 #DCDCDC;
 }
+
 #professional-challenges {
     width: 100%;
-    height: 700px;
+    height: 400px;
     background-image: linear-gradient(rgb(21, 21, 21), royalblue, rgb(15, 15, 76));
-    position: relative; /* Para posicionar a imagem corretamente */
-    text-align: center; /* Centraliza o h2 e o p */
-    -webkit-user-drag: none;
-    pointer-events: none;
     background-size: 100% 200%;
 }
 
-#professional-challenges p {
-    color: rgb(255, 255, 255);
-    margin-top: 350px;
-    max-width: 70%; /* Para o texto não ficar muito largo */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    letter-spacing: 4px;
-    word-spacing: 6px;
-}
-
-#comeco {
-    max-width: 15%;  /* Limita a largura ao container */
-    height: auto;     /* Mantém a proporção */
-    border: 10px ;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    
-}
-
-section {
-    border-bottom: 2px solid rgb(239, 239, 239);
-    border-top: 2px solid rgb(227, 227, 227);
-}
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-  }
-  
- 
-  .bannermain {
-    flex: 1; 
-    width: 100%;
-    background-color: black;
   }
   
   /* === Footer fixo no final === */
@@ -271,26 +212,3 @@ footer a {
     height: 100px;
     
   }
-    #fim {
-        position: absolute;
-        top: 40%;         
-        left: 50%;         
-        transform: translate(-50%, -50%); 
-        height: 400px;     
-        z-index: 2;        
-    }
-   
-    #socorro h2{
-        background-image: url('https://cdnb.artstation.com/p/assets/images/images/069/755/579/large/therizzler-ninjuras-screenshot-2023-10-24-215149.jpg?1700923309');
-        background-size: cover;
-        background-position: right;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 4em;
-        font-weight: 800;
-        text-transform: uppercase;
-        word-spacing: 2px;
-        letter-spacing: 1px;
-        margin-top: 50px; /* Ajusta a posição */
-        padding: 20px;
-    }

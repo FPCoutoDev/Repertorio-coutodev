@@ -1,0 +1,70 @@
+.module {
+    margin: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+    height: auto;
+    border: 2px solid rgb(212, 213, 217);
+    border-radius: 20px;
+    text-align: center;
+    background-color: #121621;
+}
+.module button {
+    all: unset;
+    display: flex;
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+.text{ 
+    color: white;
+}
+.module .trigger {
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    margin-right: 2px;
+    font-size: 1.2rem;
+    justify-content: space-between;
+    align-items: center;   
+    padding: 1rem 2rem;
+    font-weight: 700;
+    transition: 0.5s;
+}
+.module .trigger:hover {
+    cursor: pointer;
+}
+.module .trigger::after {
+content: '';
+display: inline-block;
+width: 1.1rem;
+height: 1rem;
+background-repeat: no-repeat;
+background-size: contain;
+background-image: url('/Código/assets/images/Group\ 482294.png');
+transition: 0.5s;
+}
+
+.module:hover {
+    background-color: #21293d;
+    animation-play-state: paused;
+}
+.module.open .trigger::after {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+.module .content_area {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+}
+
+.module.open .content_area {
+    display: inline-block;
+    opacity: 1;
+    height: 100%;
+}
+
+.module.open .trigger {
+    color: #47689a;
+}

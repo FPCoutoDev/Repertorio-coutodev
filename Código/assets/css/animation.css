@@ -1,6 +1,17 @@
 
 #course-content  {
 animation: moveGradient 10s ease-in-out infinite;
+padding-bottom: 100px;
+}
+.banner{
+animation: moveImage 12s ease-in-out infinite;
+}
+
+@keyframes moveImage {
+  0%   { background-position: center 50%; }
+  33%  { background-position: center 53%; }
+  66% { background-position: center 47%; }
+  100% { background-position: center 50%; }
 }
 
 @keyframes moveGradient {
@@ -20,10 +31,6 @@ animation: moveGradient 10s ease-in-out infinite;
   100% { transform: translateY(0); }
 }
 
-.module:hover {
-    background-color: #21293d;
-    animation-play-state: paused;
-}
 
 .reveal {
 opacity: 0;
@@ -39,4 +46,8 @@ transition: 1.5s;
   opacity: 1; 
   transform: translateY(0px);
   transform: translateX(0px);
+}
+
+.module {
+transition: 0.7s;
 }
